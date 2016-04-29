@@ -9,6 +9,6 @@
 
 	//Check Connection if die
 	if (!$conn) {
-		die("Failed to connect with database.")
+		die("Failed to connect with database.");
 	}
  ?>
