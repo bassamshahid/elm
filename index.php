@@ -1,13 +1,43 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: ABN-L3-3_2
- * Date: 29-Apr-16
- * Time: 5:58 PM
+ * User: shehbaz
+ * Date: 4/26/16
+ * Time: 10:56 PM
+ */
+class Routing
+{
+
+
+}
+
+include_once "controllers/session.php";
+include_once "models/security.php";
+
+function get_get($action = "")
+{
+    return $_GET[$action];
+}
+
+function main()
+{
+
+    switch (get_get("controller")) {
+        case login:
+            $obj = new Session();
+            $sobj = new Security();
+            $pdata = $sobj->filter_var($_POST);
+            $obj->login($pdata);
+            break;
+        case sub:
+            echo "sub";
+            break;
+
+    }
+}
+
+/**
+ * calling main function
  */
 
-
-echo "Hello";
-
-
-
+main();
