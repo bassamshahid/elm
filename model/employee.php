@@ -41,6 +41,7 @@ class ImpManager implements Manager
     function add_employee()
     {
         // TODO: Implement add_emplyee() method.
+        $sql="";
     }
 
     function list_employee()

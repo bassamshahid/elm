@@ -31,6 +31,7 @@ class Session
 
         session_start();
         $this->is_valid_user($data);
+        $_SESSION["user_type"]=$data["user_type"];
         $_SESSION["username"] = $data["username"];
         $_SESSION["password"] = md5($data["password"]);
 //        var_dump($_SESSION);
@@ -42,6 +43,10 @@ class Session
         session_start();
         unset($_SESSION);
         session_destroy();
+    }
+
+    function checking_user($data){
+
     }
 
 }
