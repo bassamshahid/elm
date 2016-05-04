@@ -24,6 +24,10 @@ class Session
         if ($data["username"] == "admin" && $data["password"] == "admin") {
 
         }
+        else {
+            echo "invalid user";
+            exit;
+        }
     }
 
     function login($data)
@@ -33,7 +37,7 @@ class Session
         $this->is_valid_user($data);
         $_SESSION["username"] = $data["username"];
         $_SESSION["password"] = md5($data["password"]);
-//        var_dump($_SESSION);
+          var_dump($_SESSION);
     }
 
 
