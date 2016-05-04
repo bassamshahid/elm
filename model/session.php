@@ -24,6 +24,10 @@ class Session
         if ($data["username"] == "admin" && $data["password"] == "admin") {
 
         }
+        else {
+            echo "invalid user";
+            exit;
+        }
     }
 
     function login($data)
@@ -34,7 +38,7 @@ class Session
         $_SESSION["user_type"]=$data["user_type"];
         $_SESSION["username"] = $data["username"];
         $_SESSION["password"] = md5($data["password"]);
-//        var_dump($_SESSION);
+          var_dump($_SESSION);
     }
 
 

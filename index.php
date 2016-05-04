@@ -5,14 +5,13 @@
  * Date: 4/26/16
  * Time: 10:56 PM
  */
+include "controller/user.php";
 class Routing
 {
 
 
 }
 
-include_once "controllers/session.php";
-include_once "models/security.php";
 
 function get_get($action = "")
 {
@@ -20,18 +19,18 @@ function get_get($action = "")
 }
 
 function main()
-{
+{   
 
     switch (get_get("controller")) {
-        case login:
-            $obj = new Session();
-            $sobj = new Security();
-            $pdata = $sobj->filter_var($_POST);
-            $obj->login($pdata);
+        case "login":
+            include "material-login.php";
             break;
-        case sub:
-            echo "sub";
+        case "is_login":
+            $shehreyar=new User();
+            $shehreyar->login();
             break;
+        default:
+            include "material-login.php";
 
     }
 }
