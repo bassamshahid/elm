@@ -23,11 +23,17 @@ function main()
 
     switch (get_get("controller")) {
         case "login":
-            include "material-login.php";
+           $obj1= new User();
+           $obj1->login_page();
             break;
         case "is_login":
             $shehreyar=new User();
             $shehreyar->login();
+            break;
+        case "logout":
+
+            $obj1=new User();
+            $obj1->logout();
             break;
         default:
             include "material-login.php";

@@ -29,6 +29,20 @@ class User {
         $obj=new Session();
         $obj->login($data);
 
+    }
 
+    function logout(){
+
+
+        $obj= new Session();
+        $obj->logout();
+//        echo "Logout";
+        header("Location: http://localhost/elm/index.php?controller=login");
+//        echo "<a href='http://localhost/elm/index.php?controller=login'> Login </a>";
+    }
+
+     function login_page(){
+
+         include_once "/material-login.php";
     }
 }

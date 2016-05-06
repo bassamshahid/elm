@@ -8,6 +8,15 @@
  */
 class Session
 {
+    private $manager_user="admin";
+    private $manager_pass="admin";
+    /**
+     * user type
+     * 1 -- Manager
+     * 2 -- Employee
+     */
+    const TYPE_MANAGER= 1;
+    const TYPE_EMPLOYEE=2;
 
     function __construct()
     {
@@ -21,14 +30,15 @@ class Session
     function is_valid_user($data)
     {
 
-        if ($data["username"] == "admin" && $data["password"] == "admin") {
-
+        if ($data["username"] == $this->manager_user && $data["password"] == $this->manager_pass) {
+            $_SESSION["usertype"]=self::TYPE_MANAGER;
         }
         else {
             echo "invalid user";
             exit;
         }
     }
+
 
     function login($data)
     {
@@ -49,3 +59,4 @@ class Session
     }
 
 }
+
